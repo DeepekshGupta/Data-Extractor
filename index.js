@@ -126,8 +126,8 @@ function callName(req, res) {
 
 // Take any port number of your choice which
 // is not taken by any other process
-app.listen(3000,function(error) {
-	if(error) throw error
-		console.log("Server created Successfully on PORT 3000")
-})
 
+app.listen(process.env.PORT || 3000, function(){
+    console.log("server is running @ 3000");
+
+})
