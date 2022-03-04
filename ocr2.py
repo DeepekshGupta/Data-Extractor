@@ -11,7 +11,7 @@ import sys
 # the line below can be commented out if you have tesseract added to your PATH. If not, then include the line below.
 #tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 start = time.time()
-# tess.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
+tess.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
 
 
 # dpath stores the path of the directory where the uploaded files are stored temporarily
