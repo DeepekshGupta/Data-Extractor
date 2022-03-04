@@ -1,0 +1,28 @@
+Web Design
+1.00 Ths is a sample desenption $85.00 0.00% $85.00
+Sub Total $85.00
+Tax $8.50
+Fat 0
+Invoice Number
+‘Order Number
+Invoice Date January 25, 2016
+Toisbve fame
+Payment is due within 30 days from date of invoice. Late payment is subject to fees of 5% per month,
+‘Thanks for choosing DEMO - Sliced Invoices ! admin @slicedinvaices.com
+Page 1/1
+From:
+DEMO - Sliced Invoices
+Suite 5A-1204
+123 Somewhere Street
+Your City AZ 12345
+admin@slicedinvoices.com
+To:
+Test Business
+123 Somewhere St
+Melboume, VIC 3000
+test@test.com
+6} iced voices
+ANZ Bank
+ACC #1234 1234
+BSB #4921 432
+Invoice
