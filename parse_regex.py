@@ -4,7 +4,7 @@ import sys
 
 def parse_regex(name):
     
-    text_file_path = r'extracted' + "/" + name############################################CHANGES2##############################
+    text_file_path = r'extracted' + "/" + name
     fhandle = open(text_file_path, "r")
     #print(text_file_path)
     inp = fhandle.read()
@@ -26,8 +26,8 @@ def parse_regex(name):
    # print(name)
     m = re.search('\S+_(\S+)\.\S+', name)
     #print(m)
-    # m = m.group(1)############################################CHANGES1##############################
-    the_dict['pdf_name'].append(m)
+    # m = m.group(1)#-----------------------------------------------------------------CHANGES1
+    # the_dict['pdf_name'].append(m)--------------------------------------------------CHANGES3
     # for name
     switch_invoice_reciever = 0
     string_invoice_reciever = ''
@@ -284,11 +284,11 @@ def parse_regex(name):
 
 
 
-    # print(the_dict)
+    print(the_dict)
     the_json = json.dumps(the_dict)
     loaded_r = json.loads(the_json)
 
     return(loaded_r)
 
-file_name = sys.argv[1]
-print(parse_regex(file_name))
+# file_name = sys.argv[1]
+# print(parse_regex(file_name))

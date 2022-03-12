@@ -75,51 +75,27 @@ app.post("/upload/single",function (req, res, next) {
 })
 
 
+function replaceAll(string, search, replace) {
+    return string.split(search).join(replace);
+  }
 
 
 app.get('/text', callName);
 
 function callName(req, res) {
 	
-	// Use child_process.spawn method from	
-	// child_process module and assign it
-	// to variable spawn
 	var spawn = require("child_process").spawn;
-	
-	// Parameters passed in spawn -
-	// 1. type_of_script
-	// 2. list containing Path of the script
-	// and arguments for the script
-	
-	// E.g : http://localhost:3000/name?firstname=Mike&lastname=Will
-	// so, first name = Mike and last name = Will
 
-
-	// ffname = __dirname + "\\" + upload_folder + "\\" + fname
-
-
-	console.log(fname);
-	fname2 = fname.slice(0,-4);
-	fname2 = fname2 + ".txt"
-	var process1 = spawn('python',["./ocr2.py",
+	// console.log(fname);
+	var process1 = spawn('python',["./ocr3.py",
 							fname] );
-	// var process2 = spawn('python',["./parse_regex.py",
-	// 						fname2] );
 
-	// console.log(typeof(process));
-	// Takes stdout data from script which executed
-	// with arguments and send this data to res object
-
-	// data1 = ""
-	// data2 = ""
 	process1.stdout.on('data', function(data) {
-		// console.log(typeof(data.toString()));
-		// const var1 = data.toString();
-		// console.log(typeof(var1));
-		// console.log(var1);
-		// const obj = JSON.parse(data.toString());
-		// console.log(obj);
-		res.send(data.toString());
+		var x = data.toString()
+		y = replaceAll(x, "'", '"')
+		const obj = JSON.parse(y);
+		console.log(obj);
+		res.send(obj);
 	} )
 }
 
