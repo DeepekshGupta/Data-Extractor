@@ -1,0 +1,11 @@
+software installations:
+    Nodejs
+        install node js 
+        install package.json
+    Tesseract Engine: 
+        go to https://github.com/UB-Mannheim/tesseract/wiki and download the installer for your OS and install it
+        to check: open command promt and type tesseract.exe
+    Python modeules:
+        install the requirement.txt python modules
+        install poppler
+    

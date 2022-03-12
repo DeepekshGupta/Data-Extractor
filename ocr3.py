@@ -9,7 +9,7 @@ import time
 import sys
 import parse_regex
 # the line below can be commented out if you have tesseract added to your PATH. If not, then include the line below.
-#tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 start = time.time()
 # tess.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
 
