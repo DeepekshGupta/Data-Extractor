@@ -150,7 +150,7 @@ def ocr_fun_single(id):
 
 
            
-file_name = 1
-# file_name = sys.argv[1]
+# file_name = 1
+file_name = sys.argv[1]
 
 ocr_fun_single(file_name)

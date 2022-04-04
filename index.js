@@ -18,8 +18,8 @@ var storage = multer.diskStorage({
 		cb(null, upload_folder)
 	},
 	filename: function (req, file, cb) {
-		fname = file.fieldname + "-" + Date.now()+file.originalname;
-	cb(null, file.fieldname + "-" + Date.now()+file.originalname)
+		fname = file.fieldname + "-" + Date.now()+"-" +file.originalname;
+	cb(null, file.fieldname + "-" + Date.now()+"-" +file.originalname)
 	}
 })
 	
@@ -30,6 +30,8 @@ var upload_s = multer({
 	
 		// Set the filetypes, it is optional
 		var filetypes = /jpeg|jpg|png|pdf/;
+		// var filetypes = /pdf/;
+
 		var mimetype = filetypes.test(file.mimetype);
 
 		var extname = filetypes.test(path.extname(
@@ -86,7 +88,7 @@ function callName(req, res) {
 	
 	var spawn = require("child_process").spawn;
 
-	// console.log(fname);
+	console.log(fname);
 	var process1 = spawn('python',["./ocr3.py",
 							fname] );
 
