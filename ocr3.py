@@ -1,17 +1,14 @@
-
 from pdf2image import convert_from_path
 import cv2
 import os
 import numpy as np
 import pytesseract as tess
-import multiprocessing
 import time
 import sys
 import parse_regex
 # the line below can be commented out if you have tesseract added to your PATH. If not, then include the line below.
 tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 start = time.time()
-# tess.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
 
 dpath = r"uploads"
 txtpath = r'extracted'
@@ -95,62 +92,21 @@ def execute(path_pdf, name):
 
 
 
-# def ocr_fun(id):
-#     if __name__ == '__main__':
-#         processes = []
-#         processes2 = []
-#         for filename in os.listdir(dpath):
-#             filepath = dpath + '/' + filename
-#             fname = filename.replace('.pdf', '.txt')
-#             # execute(filepath, filename)
-#             # parse_regex.parse_regex(fname)
-#             p = multiprocessing.Process(target=execute, args=(filepath, filename))#,queue1))
-#             processes.append(p)
-#             q = multiprocessing.Process(target=parse_regex.parse_regex, args=(fname))#,queue1))
-#             processes2.append(q)
-
-#         # print(processes)
-#         for process in processes:
-#             process.start()    
-
-#         for process in processes:
-#             process.join()
-        
-#         end = time.time()
-#         # print("ocr time elapsed: " + str(end - start))
-        
-#         for filename in os.listdir(dpath):
-#             fname = filename.replace('.pdf', '.txt')
-#             # print(fname)
-#             parse_regex.parse_regex(fname)
-           
-#         end = time.time()
-#         # print("regex time elapsed: " + str(end - start))
-
-
-
-
-
-
 def ocr_fun_single(id):
-    if __name__ == '__main__':
-        for filename in os.listdir(dpath):
-            #print(filename)
-            filepath = dpath + '/' + filename
-            fname = filename.replace('.pdf', '.txt')
-            # print(fname)
-            execute(filepath, filename)
-            parse_regex.parse_regex(fname)
-            os.remove(filepath)
-            # print(filepath)
-            extracted_path = "extracted" + "/" + fname
-            os.remove(extracted_path)
-            # print(extracted_path)
-
-
+    filename = id
+    filepath = dpath + '/' + filename
+    fname = filename.replace('.pdf', '.txt')
+    execute(filepath, filename)
+    parse_regex.parse_regex(fname)
+    os.remove(filepath)
+    # print(filepath)
+    extracted_path = "extracted" + "/" + fname
+    os.remove(extracted_path)
+    
 
            
 # file_name = 1
 file_name = sys.argv[1]
+    # array = sys.argv[2]
 
 ocr_fun_single(file_name)

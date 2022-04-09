@@ -8,6 +8,9 @@ const app = express()
 app.set("views",path.join(__dirname,"views"))
 app.set("view engine","ejs")
 
+app.use(express.urlencoded({extended: true}));
+app.use(express.static("public"));
+
 var fname = "";
 upload_folder = "uploads"
 	
@@ -52,6 +55,7 @@ var upload_s = multer({
 
 app.get("/",function(req,res){
 	res.render("Signup");
+	// res.sendFile(__dirname + '/temp2.html');
 })
 	
 app.post("/upload/single",function (req, res, next) {
